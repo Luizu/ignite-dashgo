@@ -60,58 +60,23 @@ export default function UserList() {
                     04 de Abril, 2021
                   </Td>
                   <Td>
-                    <Button as="a" size="sm" fontSize="sm" colorScheme="purple" leftIcon={<Icon as={RiPencilLine} fontSize="16" />}>
+                    <Button
+                      as="a"
+                      size="sm"
+                      fontSize="sm"
+                      colorScheme="purple"
+                      onClick={() => alert('This action is not ready yet')}
+                      leftIcon={<Icon
+                        as={RiPencilLine}
+                        fontSize="16"
+                      />}
+                    >
                       Editar
                     </Button>
                   </Td>
                 </>}
             </Tbody>
 
-            <Tbody>
-              <Td px={["4", "4", "6"]}>
-                <Checkbox colorScheme="pink" />
-              </Td>
-              <Td>
-                <Box>
-                  <Text fontWeight="bold">Luiz Castilho</Text>
-                  <Text fontSize="small" color="gray.300">luizucastilho@gmail.com</Text>
-                </Box>
-              </Td>
-              {isWideVersion &&
-                <>
-                  <Td>
-                    04 de Abril, 2021
-                  </Td>
-                  <Td>
-                    <Button as="a" size="sm" fontSize="sm" colorScheme="purple" leftIcon={<Icon as={RiPencilLine} fontSize="16" />}>
-                      Editar
-                    </Button>
-                  </Td>
-                </>}
-            </Tbody>
-
-            <Tbody>
-              <Td px={["4", "4", "6"]}>
-                <Checkbox colorScheme="pink" />
-              </Td>
-              <Td>
-                <Box>
-                  <Text fontWeight="bold">Luiz Castilho</Text>
-                  <Text fontSize="small" color="gray.300">luizucastilho@gmail.com</Text>
-                </Box>
-              </Td>
-              {isWideVersion &&
-                <>
-                  <Td>
-                    04 de Abril, 2021
-                  </Td>
-                  <Td>
-                    <Button as="a" size="sm" fontSize="sm" colorScheme="purple" leftIcon={<Icon as={RiPencilLine} fontSize="16" />}>
-                      Editar
-                    </Button>
-                  </Td>
-                </>}
-            </Tbody>
           </Table>
           <Pagination />
         </Box>
