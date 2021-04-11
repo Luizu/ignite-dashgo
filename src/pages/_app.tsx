@@ -3,10 +3,11 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { theme } from '../styles/theme';
 
-import { QueryClientProvider, QueryClient } from 'react-query'
+import { QueryClientProvider } from 'react-query'
 import { SidebarDrawerProvider } from '../contexts/SidebarDrawerContext';
 import { makeServer } from '../services/mirage';
 import { queryClient } from '../services/mirage/queryClient';
+import { ToastContainer } from 'react-toastify';
 
 if (process.env.NODE_ENV === 'development') {
   makeServer()
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={theme}>
         <SidebarDrawerProvider>
           <Component {...pageProps} />
+          <ToastContainer autoClose={3000} />
         </SidebarDrawerProvider>
       </ChakraProvider>
 
