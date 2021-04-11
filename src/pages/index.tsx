@@ -4,7 +4,7 @@ import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Input } from '../components/Form/Input'
 import { useRouter } from 'next/router'
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 
 type SignInFormData = {
   email: string;
@@ -28,6 +28,11 @@ export default function SignIn() {
     router.push('/dashboard')
     toast.success('Login efetuado com successo')
   }
+
+  toast.warn('Login feature not implemented yet, please use a random email/password to enter the app', {
+    closeOnClick: true,
+    autoClose: false
+  })
 
   return (
     <Flex
