@@ -3,6 +3,8 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Input } from '../components/Form/Input'
+import { useRouter } from 'next/router'
+import { toast } from 'react-toastify'
 
 type SignInFormData = {
   email: string;
@@ -15,6 +17,7 @@ const SignInFormSchema = yup.object().shape({
 })
 
 export default function SignIn() {
+  const router = useRouter()
   const { register, handleSubmit, formState } = useForm({
     resolver: yupResolver(SignInFormSchema)
   })
@@ -22,8 +25,14 @@ export default function SignIn() {
   const errors = formState.errors
 
   const handleSignIn: SubmitHandler<SignInFormData> = (values) => {
-    console.log(values)
+    router.push('/dashboard')
+    toast.success('Login efetuado com successo')
   }
+
+  toast.warn('Login feature not implemented yet, please use a random email/password to enter the app', {
+    closeOnClick: true,
+    autoClose: false
+  })
 
   return (
     <Flex
